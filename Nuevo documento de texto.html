@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Copy Text to Clipboard</title>
+</head>
+<body>
+    <button onclick="copyToClipboard('Hello, Clipboard!')">Copy to Clipboard</button>
+
+    <script>
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            // Optionally, you can notify the user that the text has been copied.
+            alert('Text copied to clipboard: ' + text);
+        }
+    </script>
+</body>
+</html>
